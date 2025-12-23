@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박시은 학생 심리 분석 보고서</title>
+    
+    <!-- [카카오톡/SNS 공유 미리보기 설정 (Open Graph)] -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="수학의시대">
+    
+    <!-- 1. 미리보기 제목 -->
+    <meta property="og:title" content="박시은 학생 - 학습멘탈 심리검사결과지">
+    
+    <!-- 2. 미리보기 설명 -->
+    <meta property="og:description" content="캐릭터: 내실 있는 미디어 꿈나무 (Substantial Media Dreamer) | 5대 핵심 역량 분석 결과 확인하기">
+    
+    <!-- 3. 미리보기 이미지 -->
+    <meta property="og:image" content="https://mathtimes-lab.github.io/Psychology/image02.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="400">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+        }
+        .serif {
+            font-family: 'Noto Serif KR', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        @media print {
+            body { background-color: white; color: black; }
+            .no-print { display: none; }
+            .print-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body class="text-slate-300 antialiased selection:bg-amber-500 selection:text-white pb-20">
+
+    <!-- Cover Section -->
+    <header class="max-w-5xl mx-auto mt-6 md:mt-10 mb-10 md:mb-16 p-6 md:p-8 lg:p-16 bg-slate-800 rounded-3xl card-shadow border border-slate-700 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500 opacity-10 blur-3xl rounded-full pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <!-- Logo & Title Placement -->
+        <div class="absolute top-5 left-5 md:top-6 md:left-6 z-20 flex flex-col items-start">
+            <img src="수학의시대-신로고.jpg" 
+                 alt="수학의시대" 
+                 class="w-24 md:w-28 lg:w-36 object-contain mb-2 md:mb-3"
+                 onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            
+            <div id="logo-text" class="hidden text-amber-500 font-bold text-lg md:text-xl serif border-2 border-amber-500 px-2 md:px-3 py-1 mb-3">
+                수학의시대
+            </div>
+            
+            <div class="serif text-slate-400 text-[10px] md:text-xs lg:text-sm tracking-widest font-light border-l-2 border-amber-500 pl-2 md:pl-3">
+                수학의시대<br>
+                <span class="text-slate-200 font-medium mt-1 block">학습멘탈 심리검사결과지</span>
+            </div>
+        </div>
+
+        <div class="text-center relative z-10 pt-28 md:pt-24 lg:pt-16">
+            <p class="text-amber-500 tracking-[0.3em] text-xs md:text-sm font-bold uppercase mb-3 md:mb-4">Premium Insight Report</p>
+            <h1 class="serif text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2">박시은 <span class="text-xl md:text-2xl lg:text-3xl font-normal text-slate-400">학생</span></h1>
+            <p class="text-slate-400 text-base md:text-lg mb-6 md:mb-8">고등학교 2학년 | 심리 & 학습 성향 분석</p>
+            
+            <div class="inline-block border-t border-b border-slate-600 py-4 md:py-6 px-2 md:px-4 lg:px-12 w-full md:w-auto">
+                <h2 class="serif text-xl md:text-2xl lg:text-3xl text-white font-light italic leading-relaxed">
+                    "차분한 열정을 품은,<br>
+                    <span class="text-amber-400 font-normal">'내실 있는 미디어 꿈나무 (Substantial Media Dreamer)'</span>"
+                </h2>
+            </div>
+            
+            <p class="mt-6 md:mt-8 text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto break-keep">
+                시은 학생은 <strong>'미디어'</strong> 분야에 대한 관심이 뚜렷하고, 공부 압박이 없어도 스스로 배움을 찾아 나서는 <strong>진정성 있는 인재</strong>입니다.<br class="hidden md:block">
+                하기 싫은 일도 묵묵히 해내는 <strong>끈기(Grit 3.9)</strong>와 성공하고 싶은 <strong>숨겨진 야망(4.1)</strong>이 성장의 동력입니다.<br class="hidden md:block">
+                이 보고서는 시은이의 섬세한 감수성을 보호하면서, 꿈을 향해 단단하게 나아가기 위한 전략서입니다.
+            </p>
+        </div>
+    </header>
+
+    <!-- Chart & Summary Section -->
+    <section class="max-w-5xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16">
+        <!-- Radar Chart -->
+        <div class="bg-slate-800 p-4 md:p-6 rounded-2xl border border-slate-700 card-shadow flex flex-col justify-center items-center lg:col-span-1">
+            <h3 class="text-white font-bold mb-4 text-center text-sm md:text-base">5대 핵심 역량 밸런스</h3>
+            <div class="w-full h-56 md:h-64 relative">
+                <canvas id="myChart"></canvas>
+            </div>
+            <!-- 설명 문구 -->
+            <p class="text-[10px] md:text-xs text-center text-slate-500 mt-4">* 0점 ~ 5점 척도 기준 분석입니다.</p>
+        </div>
+
+        <!-- Key Summary -->
+        <div class="lg:col-span-2 bg-gradient-to-br from-slate-800 to-slate-900 p-6 md:p-8 rounded-2xl border border-slate-700 card-shadow flex flex-col justify-center">
+            <h3 class="serif text-xl md:text-2xl text-white mb-4 md:mb-6">분석 요약</h3>
+            <div class="space-y-3 md:space-y-4 text-sm md:text-base">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">최대 강점 (Strength)</span>
+                    <span class="text-amber-400 font-bold text-base md:text-lg">성공 욕구 (4.1) & 실천력 (3.9)</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">주의 요인 (Weakness)</span>
+                    <span class="text-red-400 font-bold text-base md:text-lg">감정 기복 & 비판 수용성</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">핵심 성향 (Core)</span>
+                    <span class="text-blue-300 font-bold text-base md:text-lg">성실한 규범형 & 잠재적 열정</span>
+                </div>
+            </div>
+            <p class="mt-4 md:mt-6 text-slate-300 italic text-sm md:text-base leading-relaxed break-keep">
+                "평균 이상이 되고 싶은 건강한 욕심(4.1)이 있습니다. 규칙을 잘 따르고, 하기 싫은 일도 책임감 있게 해내는 성실함(3.9)이 돋보입니다.
+                다만, 지적을 받으면 마음이 크게 위축되는 섬세한 멘탈(3.1)을 가지고 있어, 따뜻한 격려가 필수적입니다."
+            </p>
+        </div>
+    </section>
+
+    <!-- Detail Cards Section -->
+    <main class="max-w-5xl mx-auto px-4 space-y-6 md:space-y-8">
+        
+        <!-- Row 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <!-- 1. 자기애 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-amber-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">01. 자기애 (Self-regard)</h3>
+                    <span class="bg-amber-500/20 text-amber-500 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">3.5점 / 건강함</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"튀고 싶진 않지만, 인정받고 싶어."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    평범함과 특별함 사이에서 균형을 잡고 있습니다(3점). 자신의 장단점을 객관적으로 파악하려 하며, 타인의 인정에 동기부여를 받습니다(4점). 칭찬은 시은이를 춤추게 하는 가장 좋은 비타민입니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-amber-400 text-sm font-bold mb-2">💡 SOLUTION : '결과물' 만들기</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">막연한 자신감보다, 눈에 보이는 성취가 중요합니다. 관심 있는 '미디어' 분야에서 작은 영상 편집이나 블로그 기록을 남겨보세요. "나 이런 거 할 줄 알아"라는 자부심이 생깁니다.</p>
+                </div>
+            </div>
+
+            <!-- 2. 실천력 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-blue-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">02. 실천력·의지력 (Grit)</h3>
+                    <span class="bg-blue-500/20 text-blue-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">3.9점 / 성실함</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"싫어도 해야 한다면, 끝까지 한다."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    하기 싫어도 해야 할 일이라면 억지로라도 시작하고(4점), 세운 계획은 끝까지 지키려 노력합니다(4점). 쉽게 포기하지 않는 끈기(4점)가 있습니다. 화려하진 않지만 묵묵히 제 몫을 해내는 '마라토너' 같은 스타일입니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-blue-400 text-sm font-bold mb-2">💡 SOLUTION : '관심 분야'와 연결</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">흥미 있는 분야(미디어)에서는 스스로 열심히 합니다(5점). 공부할 때도 유튜브 교육 채널을 활용하거나, 미디어 관련 지문을 공부하는 등 흥미 요소를 섞으면 효율이 배가됩니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <!-- 3. 욕심 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-purple-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">03. 욕심·동기부여 (Ambition)</h3>
+                    <span class="bg-purple-500/20 text-purple-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">4.1점 / 내적 열정</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"평균으로 만족 못 해. 더 잘하고 싶어."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    적당히 남들과 비슷한 정도에 만족하지 않습니다(평균만족 2점=역환산 4점). 성공하고 싶은 마음(4점)이 큽니다. 특히 "공부 압박이 없어도 미디어 기술을 배울 것"이라는 답변에서 **진짜 배움에 대한 열망**이 느껴집니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-purple-400 text-sm font-bold mb-2">💡 SOLUTION : 진로 구체화</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">'미디어'라는 방향은 정해졌으니, 이제 '영상 편집자', 'PD', '마케터' 등 구체적인 직업을 탐색해보세요. 목표가 선명해질수록 지금 공부해야 할 이유가 명확해집니다.</p>
+                </div>
+            </div>
+
+            <!-- 4. 멘탈 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-red-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">04. 멘탈 강도 (Resilience)</h3>
+                    <span class="bg-red-500/20 text-red-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">3.1점 / 섬세함</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"혼나면 마음이 아파요. 격려해 주세요."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    누군가에게 혼나거나 지적받으면 쉽게 주눅이 듭니다(4점). 노력했는데 잘 안 돼서 울어본 경험도 있습니다. 마음이 여리고 감수성이 풍부합니다. 하지만 작은 실패에는 크게 흔들리지 않는(3점) 기본적인 회복력은 갖추고 있습니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-red-400 text-sm font-bold mb-2">💡 SOLUTION : 감정의 '거리두기'</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">지적을 '나에 대한 비난'이 아니라 '행동에 대한 교정'으로 받아들이는 연습이 필요합니다. "내가 못난 게 아니라, 이 방법이 틀렸던 거야"라고 생각하세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 (Full Width) -->
+        <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-emerald-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-3 md:mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-white">05. 자율성/주도력 (Autonomy)</h3>
+                        <span class="bg-emerald-500/20 text-emerald-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-auto md:ml-4">3.5점 / 협조적</span>
+                    </div>
+                    <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"규칙은 잘 지키지만, 간섭은 싫어."</p>
+                    <div class="text-slate-400 text-sm leading-relaxed break-keep">
+                        권위적인 태도에 반발하기보다(2점) 규칙을 잘 따르는(4점) 모범생입니다. 하지만 간섭을 받으면 하기 싫어지는(4점) 면도 있어, **'존중받으며 따르는 것'**을 선호합니다. 무조건적인 복종이 아니라, 납득할 수 있는 가이드라인이 필요합니다.
+                    </div>
+                </div>
+                <div class="md:w-1/3 bg-slate-900/50 p-4 md:p-6 rounded-xl border border-slate-700 flex flex-col justify-center">
+                    <h4 class="text-emerald-400 text-sm font-bold mb-2 md:mb-3">💡 SOLUTION : '제안'하는 화법</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">주변 어른들은 시은이에게 명령조보다 "이런 방법은 어때?"라고 제안하는 것이 좋습니다. 스스로 선택할 때 책임감이 더 강해집니다.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Guide Section -->
+    <section class="max-w-5xl mx-auto px-4 mt-12 md:mt-16 print-break">
+        <div class="bg-white text-slate-900 rounded-3xl p-6 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-400 to-amber-600"></div>
+            
+            <h2 class="serif text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center text-slate-800">부모님을 위한 가이드 & 총평</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-6 md:mb-10">
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">📺</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">관심사 존중</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">'미디어' 분야에 대한 관심을 응원해 주세요. 관련 학과 진학을 목표로 삼으면 현재의 공부(문과 과목)에도 큰 동기부여가 됩니다.</p>
+                </div>
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">❤️</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">따뜻한 격려</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">비판보다는 칭찬이 약입니다. 혼내면 숨어버릴 수 있습니다. "잘하고 있어, 네 노력을 알아"라는 말 한마디가 시은이를 다시 책상에 앉게 합니다.</p>
+                </div>
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">📈</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">성장 가능성</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">현재 50~70% 정도 노력하고 있다고 스스로 평가합니다. 이는 아직 보여주지 않은 잠재력이 30% 이상 남아있다는 긍정적인 신호입니다.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 md:mt-8 bg-slate-100 p-6 md:p-8 rounded-xl border-l-4 border-slate-800">
+                <h3 class="font-bold text-slate-800 mb-2 md:mb-4 text-lg md:text-xl">To. 시은</h3>
+                <p class="text-slate-700 italic leading-loose text-base md:text-lg break-keep">
+                    "시은아, 네가 공부하다가 흘렸던 눈물은 네가 그만큼 **'진심'**이었다는 증거야. 
+                    너는 겉으로는 조용해 보이지만, 속에는 '미디어'라는 멋진 꿈을 향한 뜨거운 열정을 품고 있어.
+                    지금 당장 성적이 맘에 안 들 수도 있어. 하지만 괜찮아. 너는 하기 싫은 일도 끝까지 해내는 끈기가 있잖아.
+                    그 끈기에 네가 좋아하는 '미디어'라는 날개를 달아봐. 
+                    네가 상상하는 미래의 멋진 직장인이 된 네 모습, 분명 현실이 될 거야."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-12 md:mt-20 text-slate-600 text-xs md:text-sm pb-8">
+        <p>© 2025 Education Psychology Analysis. All rights reserved.</p>
+        <p>This report is designed for student Park Si-eun.</p>
+    </footer>
+
+    <script>
+        // Chart configuration - Park Si-eun's Data
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['자기애/자신감', '실천력', '욕심/야망', '멘탈/회복력', '자율성/주도력'],
+                datasets: [{
+                    label: '역량 점수',
+                    data: [3.5, 3.9, 4.1, 3.1, 3.5], 
+                    backgroundColor: 'rgba(251, 191, 36, 0.2)', // Amber-400 with opacity
+                    borderColor: 'rgba(251, 191, 36, 1)', // Amber-400
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+                    pointBorderColor: 'rgba(251, 191, 36, 1)',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 5,
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: {
+                            color: '#94a3b8', // Slate-400
+                            font: { size: 12, family: "'Noto Sans KR', sans-serif" }
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: 'rgba(255, 255, 255, 0.5)',
+                            stepSize: 1,
+                            showLabelBackdrop: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
