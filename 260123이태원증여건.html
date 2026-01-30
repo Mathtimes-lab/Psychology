@@ -237,7 +237,7 @@
                 <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT ISSUE</span>
             </div>
             <p class="text-sm text-gray-500 mb-6 border-b pb-4">
-                가정: 15년 후 이태원 토지 가액 <span class="text-slate-900 font-bold">40억 원</span> 상승 시<br>
+                가정: 15년 후 이태원 부동산 가액이 <span class="text-slate-900 font-bold">40억 원</span>이 된다고 전제 시<br>
                 (기존 상속재산으로 인해 한계세율 40% 구간 적용)
             </p>
             
@@ -397,14 +397,14 @@
             <!-- Total Summary Block -->
             <div class="bg-slate-900 text-white p-6 md:p-8 flex flex-col md:flex-row justify-between items-center border-t border-slate-700 mt-0">
                 <div class="mb-4 md:mb-0 text-center md:text-left">
-                    <h4 class="text-xl font-bold text-custom-gold mb-1">총 예상 소요 자금</h4>
-                    <p class="text-sm text-gray-400">세금 합계 + 부대 비용 (법무/세무)</p>
+                    <h4 class="text-xl font-bold text-custom-gold mb-1">총 예상 세금 합계</h4>
+                    <p class="text-sm text-gray-400">취득세 + 법인세 + 양도소득세 (순수 세금)</p>
                 </div>
                 <div class="text-center md:text-right">
-                    <span class="block text-3xl font-bold text-white mb-1">약 5,571만 원</span>
+                    <span class="block text-3xl font-bold text-white mb-1">약 5,341만 원</span>
                     <div class="text-xs text-gray-400 bg-slate-800 px-3 py-2 rounded inline-block text-right">
-                        세금(5,341만) + 법무비용(120만) + 세무비용(110만)<br>
-                        <span class="text-gray-500">* 세금: 취득세(2,890) + 법인세(1,971) + 양도세(480)</span>
+                        1. 취득세(2,890) + 2. 법인세(1,971) + 4. 양도세(480)<br>
+                        <span class="text-gray-500">* 법무/세무 대행 수수료 별도</span>
                     </div>
                 </div>
             </div>
@@ -506,7 +506,7 @@
                     datasets: [
                         {
                             label: '예상 총 세금 부담액 (단위: 억 원)',
-                            data: [8.0, 0.557], /* 15년후 40억가정 50%지분 상속세 vs 현재 비용(0.557) */
+                            data: [8.0, 0.534], /* 15년후 40억가정 50%지분 상속세 vs 현재 비용(0.534) */
                             backgroundColor: [
                                 '#ef4444', // Red for high tax
                                 '#3b82f6'  // Blue for optimization
