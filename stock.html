@@ -120,7 +120,15 @@
         /* Expert Specific Colors */
         .expert-stock-artisan { color: #fbbf24; } /* Amber-400 */
         .expert-park-doohwan { color: #22d3ee; } /* Cyan-400 */
+        .expert-stock-jaebeol { color: #4ade80; } /* Green-400 */
         .expert-default { color: #94a3b8; } /* Slate-400 */
+        
+        /* Highlight Animation Class */
+        .card-highlight {
+            border-color: #fbbf24 !important;
+            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.3) !important;
+            background-color: rgba(30, 41, 59, 0.9) !important;
+        }
     </style>
 </head>
 <body class="min-h-screen p-4 md:p-8">
@@ -163,6 +171,7 @@
             <div class="flex items-center gap-2 mb-4">
                 <i data-lucide="crown" class="w-5 h-5 text-amber-400"></i>
                 <h2 class="text-xl font-bold text-white">종합 긍정 지수 TOP 5</h2>
+                <span class="text-xs text-slate-500 ml-2 font-normal">* 카드를 클릭하면 상세 분석으로 이동합니다</span>
             </div>
             <div id="top-picks-container" class="grid grid-cols-1 md:grid-cols-5 gap-4">
                 <!-- Top 5 cards injected here -->
@@ -204,12 +213,185 @@
 
         // State Management
         let recommendations = [];
-        const STORAGE_KEY = 'stock_pro_data_v9'; // Version bumped
+        const STORAGE_KEY = 'stock_pro_data_v12'; // Using v12 (Same as previous step to keep data)
 
         // Initial Data 
-        // Note: Added PER mentions in rationale for demonstration
         const initialData = [
-            // 반도체 / IT
+            // [NEW] 260204 Stock Jaebeol (Backfilled)
+            {
+                id: 601,
+                sector: '로봇 / 우주',
+                date: '2026-02-04',
+                expert: '주식재벌',
+                stockName: '이노스페이스',
+                code: '462350',
+                price: '-',
+                targetPrice: '50,000원+',
+                sentiment: 94,
+                rationale: '한국형 스페이스X. 일론머스크 우주 태양광 데이터센터 구상의 수혜주. 하이브리드 로켓 기술 보유.'
+            },
+            {
+                id: 602,
+                sector: '에너지 / 화학 (태양광)',
+                date: '2026-02-04',
+                expert: '주식재벌',
+                stockName: '유니테스트',
+                code: '086390',
+                price: '-',
+                targetPrice: '전고점 33,000원',
+                sentiment: 92,
+                rationale: '우주 태양광 핵심인 페로브스카이트 대면적 효율 세계 최고(20.6%). 2차 상승 파동 초입.'
+            },
+            {
+                id: 603,
+                sector: '에너지 / ESS',
+                date: '2026-02-04',
+                expert: '주식재벌',
+                stockName: '한중NCS',
+                code: '107640',
+                price: '-',
+                targetPrice: '57,200원 돌파',
+                sentiment: 90,
+                rationale: '우주/데이터센터 전력 저장(ESS) 필수인 냉각 시스템(Chiller) 제조. 적자 탈피 후 이익 급증 구간 진입.'
+            },
+            {
+                id: 604,
+                sector: '철강 / 소재',
+                date: '2026-02-04',
+                expert: '주식재벌',
+                stockName: '현대비앤지스틸',
+                code: '004560',
+                price: '-',
+                targetPrice: '-',
+                sentiment: 88,
+                rationale: '희토류 영구자석 투자사(성림첨단산업) 보유. 로봇 액추에이터 핵심 소재.'
+            },
+            {
+                id: 605,
+                sector: '건설 / 인프라 / 기계',
+                date: '2026-02-04',
+                expert: '주식재벌',
+                stockName: 'SG',
+                code: '255220',
+                price: '-',
+                targetPrice: '-',
+                sentiment: 87,
+                rationale: '우크라 재건 및 남북경협 테마. 시총 가벼워 탄력적인 상승 가능.'
+            },
+            {
+                id: 606,
+                sector: '자동차 / 2차전지',
+                date: '2026-02-04',
+                expert: '주식재벌',
+                stockName: '엠오티',
+                code: '413390',
+                price: '-',
+                targetPrice: '-',
+                sentiment: 89,
+                rationale: '삼성SDI 밸류체인(매출 90%). 휴머노이드 로봇용 46파이 원통형 배터리 조립 장비 부각.'
+            },
+            {
+                id: 607,
+                sector: '반도체 / IT',
+                date: '2026-02-04',
+                expert: '주식재벌',
+                stockName: '선익시스템',
+                code: '171090',
+                price: '-',
+                targetPrice: '-',
+                sentiment: 90,
+                rationale: '텔레그램 무료방 추천 후 상한가 기록. 역대급 영업이익(1115억원) 달성.'
+            },
+
+            // [Previous] 260208 Stock Jaebeol Additions
+            {
+                id: 501,
+                sector: '반도체 / IT',
+                date: '2026-02-08',
+                expert: '주식재벌',
+                stockName: '선익시스템',
+                code: '171090',
+                price: '-',
+                targetPrice: '97,200원 돌파',
+                sentiment: 97,
+                rationale: '스마트 글래스(4세대 디바이스) 핵심인 마이크로 OLED 장비 글로벌 1위. 페로브스카이트 태양전지 장비 모멘텀까지 겸비. 역대 최대 실적 기반 신고가 랠리 기대.'
+            },
+            {
+                id: 502,
+                sector: '로봇 / 우주',
+                date: '2026-02-08',
+                expert: '주식재벌',
+                stockName: '링크솔루션',
+                code: '000000', // Unlisted or generic placeholder based on transcript
+                price: '-',
+                targetPrice: '-',
+                sentiment: 92,
+                rationale: '현대차가 인수한 보스턴다이내믹스 로봇 핵심 부품 공급 및 정부 주도 K-저궤도 위성 사업 참여. 3D 프린팅 기술로 우주/로봇 부품 제조.'
+            },
+            {
+                id: 503,
+                sector: '전력 / 인프라',
+                date: '2026-02-08',
+                expert: '주식재벌',
+                stockName: '제룡전기',
+                code: '033100',
+                price: '-',
+                targetPrice: '100,000원+',
+                sentiment: 96,
+                rationale: 'AI 데이터센터 전력난의 최대 수혜(변압기 쇼티지). 영업이익 1300% 폭증하며 펀더멘털 레벨업. 북미 매출 비중 확대로 고환율 수혜.'
+            },
+            {
+                id: 504,
+                sector: '철강 / 소재',
+                date: '2026-02-08',
+                expert: '주식재벌',
+                stockName: '현대비앤지스틸',
+                code: '004560',
+                price: '-',
+                targetPrice: '-',
+                sentiment: 88,
+                rationale: '상한가 이후 눌림목 구간에서 아래꼬리 달린 팽이형 캔들 출현. 재반등 시그널 포착.'
+            },
+
+            // [Previous] 260206 Stock Jaebeol
+            {
+                id: 401,
+                sector: '로봇 / 방산',
+                date: '2026-02-06',
+                expert: '주식재벌',
+                stockName: 'SPG',
+                code: '058610',
+                price: '-',
+                targetPrice: '추가 100% 상승',
+                sentiment: 96,
+                rationale: '삼성/LG 로봇 사업 필수 부품(감속기) 공급. 기관/외국인 양매수 포착. 저평가 로봇주.'
+            },
+            {
+                id: 402,
+                sector: '자동차 / 2차전지',
+                date: '2026-02-06',
+                expert: '주식재벌',
+                stockName: '에코프로',
+                code: '086520',
+                price: '-',
+                targetPrice: '500,000원+',
+                sentiment: 94,
+                rationale: '코스닥 3000 견인할 대장주. 로봇 시대 배터리 수요 증가. 에코프로비엠 대비 상단 매물대 적음.'
+            },
+            {
+                id: 403,
+                sector: '반도체 / IT',
+                date: '2026-02-06',
+                expert: '주식재벌',
+                stockName: '고영',
+                code: '098460',
+                price: '-',
+                targetPrice: '단기 급등',
+                sentiment: 92,
+                rationale: '반도체(HBM 검사), 로봇(뇌수술), 바이오(FDA 승인) 3박자. 4분기 매출 48% 급증 어닝 서프라이즈 기대.'
+            },
+
+            // [Previous] 260207 Stock Artisan
             {
                 id: 301,
                 sector: '반도체 / IT',
@@ -220,7 +402,7 @@
                 price: '-',
                 targetPrice: '신고가 갱신',
                 sentiment: 95,
-                rationale: '시장이 공포를 느낄 때 오히려 신고가를 갱신하며 올라가는 강한 종목. 반도체 소부장 내 대장주 흐름 지속. PER 15배 수준으로 재평가 기대.'
+                rationale: '시장이 공포를 느낄 때 오히려 신고가를 갱신하며 올라가는 강한 종목. 반도체 소부장 내 대장주 흐름 지속. PER 15배 수준 재평가.'
             },
             {
                 id: 302,
@@ -232,7 +414,7 @@
                 price: '-',
                 targetPrice: '-',
                 sentiment: 88,
-                rationale: '애프터마켓 상승 마감. 흔들리는 시장에서도 견조한 흐름을 유지하는 소부장 핵심 종목. 고압수소 어닐링 독점 기술 부각.'
+                rationale: '애프터마켓 상승 마감. 흔들리는 시장에서도 견조한 흐름을 유지하는 소부장 핵심 종목.'
             },
             {
                 id: 303,
@@ -244,9 +426,8 @@
                 price: '-',
                 targetPrice: '-',
                 sentiment: 85,
-                rationale: '반도체 지수 반등과 함께 플러스 마감. AI 및 비메모리 테스트 수요 증가 수혜 유효. 역사적 저점 P/E 18배 근접.'
+                rationale: '반도체 지수 반등과 함께 플러스 마감. AI 및 비메모리 테스트 수요 증가 수혜 유효.'
             },
-            // 제약 / 바이오
             {
                 id: 304,
                 sector: '제약 / 바이오',
@@ -257,7 +438,7 @@
                 price: '-',
                 targetPrice: '-',
                 sentiment: 92,
-                rationale: '실적 성장과 이익 구조(마진율) 개선이 뚜렷하여 외국인이 매수 중. 불안한 장세에서 믿고 갈 수 있는 실적주.'
+                rationale: '실적 성장과 이익 구조 개선이 뚜렷하여 외국인이 매수 중. 불안한 장세에서 믿고 갈 수 있는 실적주.'
             },
             {
                 id: 305,
@@ -272,31 +453,6 @@
                 rationale: '외국인 및 기관 수급 유입. 실적 전망이 좋고 이익 케파가 지속적으로 늘어나는 우량주.'
             },
             {
-                id: 306,
-                sector: '제약 / 바이오',
-                date: '2026-02-07',
-                expert: '주식장인',
-                stockName: '에스티팜',
-                code: '237690',
-                price: '-',
-                targetPrice: '-',
-                sentiment: 88,
-                rationale: '기관/외국인이 선호하는 실적 성장주. RNA 치료제 원료 시장 확대 수혜.'
-            },
-             {
-                id: 307,
-                sector: '제약 / 바이오',
-                date: '2026-02-07',
-                expert: '주식장인',
-                stockName: '엘앤씨바이오',
-                code: '290650',
-                price: '-',
-                targetPrice: '-',
-                sentiment: 87,
-                rationale: '실적이 뒷받침되는 바이오 기업. 최근 조정은 매수 기회로 판단.'
-            },
-            // 화장품 / 소비재
-            {
                 id: 308,
                 sector: '화장품 / 소비재',
                 date: '2026-02-07',
@@ -306,21 +462,8 @@
                 price: '-',
                 targetPrice: '-',
                 sentiment: 85,
-                rationale: '2월 조정장에서도 플러스 마감하며 견조한 흐름. 글로벌 홈 뷰티 디바이스 시장 성장 수혜. PER 12배 저평가 매력.'
+                rationale: '2월 조정장에서도 플러스 마감하며 견조한 흐름. 글로벌 홈 뷰티 디바이스 시장 성장 수혜.'
             },
-            {
-                id: 309,
-                sector: '화장품 / 소비재',
-                date: '2026-02-07',
-                expert: '주식장인',
-                stockName: '한국콜마',
-                code: '161890',
-                price: '-',
-                targetPrice: '-',
-                sentiment: 84,
-                rationale: '화장품 섹터 긍정적 시각 유지. 수출 실적 호조에 따른 실적 개선 기대.'
-            },
-            // 건설 / 인프라 / 기계
             {
                 id: 310,
                 sector: '건설 / 인프라 / 기계',
@@ -331,21 +474,10 @@
                 price: '-',
                 targetPrice: '-',
                 sentiment: 88,
-                rationale: '미국 캐터필러 신고가 갱신 수혜주. 우크라 재건 및 트럼프 인프라 정책 모멘텀. 최근 조정은 매수 찬스.'
+                rationale: '미국 캐터필러 신고가 갱신 수혜주. 우크라 재건 및 트럼프 인프라 정책 모멘텀.'
             },
-            {
-                id: 203,
-                sector: '건설 / 인프라 / 기계',
-                date: '2026-02-06',
-                expert: '박두환',
-                stockName: 'DL이앤씨',
-                code: '375500',
-                price: '-',
-                targetPrice: '-',
-                sentiment: 85,
-                rationale: '철저한 원가 관리로 영업이익 급증. 높은 재무 건전성 및 하이엔드 브랜드 경쟁력. PBR 0.3배 수준.'
-            },
-            // 에너지 / 원전
+
+            // [Previous] Park Doohwan 260206 & 260208
             {
                 id: 201,
                 sector: '에너지 / 원전',
@@ -359,19 +491,6 @@
                 rationale: '대미 투자 압박 해소 카드로 원전 부상. SMR 수주 파이프라인 가시화.'
             },
             {
-                id: 202,
-                sector: '에너지 / 원전',
-                date: '2026-02-06',
-                expert: '박두환',
-                stockName: '한국전력',
-                code: '015760',
-                price: '-',
-                targetPrice: '-',
-                sentiment: 80,
-                rationale: '직류(DC) 기반 전력 기술 등 신기술로 전력망 디지털 전환 주도.'
-            },
-            // 에너지 / 화학 (태양광)
-             {
                 id: 206,
                 sector: '에너지 / 화학 (태양광)',
                 date: '2026-02-06',
@@ -405,7 +524,7 @@
                 price: '-',
                 targetPrice: '관심',
                 sentiment: 85,
-                rationale: '탠덤 태양전지 핵심 소재 폴리실리콘 공급. 안정적인 공급망 역할. PER 3배 수준의 저평가 매력.'
+                rationale: '탠덤 태양전지 핵심 소재 폴리실리콘 공급. 안정적인 공급망 역할.'
             },
             {
                 id: 103,
@@ -419,8 +538,7 @@
                 sentiment: 84,
                 rationale: '페로브스카이트 보호 소재 및 공정 기술 보유.'
             },
-            // 로봇 / 방산
-             {
+            {
                 id: 204,
                 sector: '로봇 / 방산',
                 date: '2026-02-06',
@@ -433,18 +551,6 @@
                 rationale: '자회사 베어로보틱스와 협력해 상업용 로봇 솔루션 성과 가시화.'
             },
             {
-                id: 205,
-                sector: '로봇 / 방산',
-                date: '2026-02-06',
-                expert: '박두환',
-                stockName: '대한항공',
-                code: '003490',
-                price: '-',
-                targetPrice: '-',
-                sentiment: 87,
-                rationale: '항공우주사업본부 흑자 전환 및 무인기 개발 등 방산 포트폴리오 강화.'
-            },
-             {
                 id: 1,
                 sector: '반도체 / IT',
                 date: '2026-02-08',
@@ -473,13 +579,13 @@
                 sector: '제약 / 바이오',
                 date: '2026-02-08',
                 expert: '주식장인',
-                stockName: '리가켐바이오',
+                stockName: 'ligaChem Bio',
                 code: '141080',
                 price: '-',
                 targetPrice: '신고가',
                 sentiment: 95,
                 rationale: '오리온 인수 후 풍부한 자금력을 바탕으로 성장 가속화. ADC 플랫폼 고성장.'
-            },
+            }
         ];
 
         // Load Data on Startup
@@ -521,7 +627,6 @@
                 }
 
                 // Add entry
-                // Extract PER if present
                 const perMatch = item.rationale.match(/(?:PER|P\/E)\s*(\d+(\.\d+)?)/i);
                 const perValue = perMatch ? perMatch[1] : null;
 
@@ -530,22 +635,19 @@
                     per: perValue
                 });
 
-                // Keep latest Target Price & Price
                 const currentMainDate = new Date(stockMap[key].date || 0);
                 const newEntryDate = new Date(item.date);
                 if (newEntryDate >= currentMainDate) {
                     stockMap[key].targetPrice = item.targetPrice;
                     stockMap[key].price = item.price;
-                    stockMap[key].date = item.date; // Latest date
+                    stockMap[key].date = item.date; 
                 }
             });
 
-            // Flatten to array and calculate stats
             return Object.values(stockMap).map(stock => {
                 const totalSentiment = stock.entries.reduce((sum, e) => sum + e.sentiment, 0);
                 const avgSentiment = Math.round(totalSentiment / stock.entries.length);
                 
-                // Collect PERs if multiple
                 const perSet = new Set();
                 stock.entries.forEach(e => { if(e.per) perSet.add(e.per); });
                 const displayPer = perSet.size > 0 ? Array.from(perSet).join(', ') : null;
@@ -563,10 +665,28 @@
         function getExpertColor(expertName) {
             if (expertName.includes('주식장인')) return 'expert-stock-artisan';
             if (expertName.includes('박두환')) return 'expert-park-doohwan';
+            if (expertName.includes('주식재벌')) return 'expert-stock-jaebeol';
             return 'expert-default';
         }
 
-        // Render Top 5 Picks
+        // Helper: Scroll To Stock Card
+        function scrollToStock(stockId) {
+            const element = document.getElementById(stockId);
+            if (element) {
+                // Smooth scroll
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Add temporary highlight effect
+                element.classList.add('card-highlight');
+                setTimeout(() => {
+                    element.classList.remove('card-highlight');
+                }, 2000);
+            } else {
+                console.warn(`Element with id ${stockId} not found.`);
+            }
+        }
+
+        // Render Top 5 Picks - Expert Count View & Click to Scroll
         function renderTopPicks(processedStocks) {
             const container = document.getElementById('top-picks-container');
             
@@ -574,30 +694,43 @@
             const sorted = [...processedStocks].sort((a, b) => b.avgSentiment - a.avgSentiment);
             const top5 = sorted.slice(0, 5);
 
-            container.innerHTML = top5.map((stock, index) => `
-                <div class="highlight-panel rounded-lg p-4 card-hover flex flex-col justify-between h-full">
+            container.innerHTML = top5.map((stock, index) => {
+                // Calculate expert counts
+                const expertCounts = {};
+                stock.entries.forEach(entry => {
+                    expertCounts[entry.expert] = (expertCounts[entry.expert] || 0) + 1;
+                });
+
+                // Generate HTML for expert counts
+                const expertHtml = Object.entries(expertCounts).map(([expert, count]) => {
+                    const colorClass = getExpertColor(expert);
+                    return `<div class="flex justify-between items-center text-xs mb-1">
+                        <span class="${colorClass} font-medium tracking-tight">${expert}</span>
+                        <span class="text-slate-400 text-[10px]">${count}회</span>
+                    </div>`;
+                }).join('');
+
+                // ID for scrolling
+                const stockId = `stock-card-${stock.stockName.replace(/\s+/g, '')}`;
+
+                return `
+                <div class="highlight-panel rounded-lg p-4 card-hover flex flex-col justify-between h-full cursor-pointer transition-transform active:scale-95" onclick="scrollToStock('${stockId}')">
                     <div class="flex justify-between items-start mb-2">
                         <span class="text-xs font-bold text-amber-500">TOP ${index + 1}</span>
-                        ${stock.displayPer ? `<span class="per-tag">PER ${stock.displayPer}배</span>` : ''}
+                        <span class="text-xs text-slate-500 font-mono">Score: ${stock.avgSentiment}</span>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <h3 class="text-lg font-bold text-white leading-tight mb-1">${stock.stockName}</h3>
                         <div class="flex items-center gap-1 text-xs text-slate-400">
-                             <span class="bg-slate-800 px-1 rounded">${stock.code}</span>
-                             <span>${stock.sector.split('/')[0]}</span>
+                                <span class="bg-slate-800 px-1 rounded">${stock.code}</span>
                         </div>
                     </div>
-                    <div class="mt-3">
-                        <div class="flex justify-between text-xs mb-1">
-                            <span class="text-slate-400">긍정 지수</span>
-                            <span class="text-amber-400 font-bold">${stock.avgSentiment}</span>
-                        </div>
-                        <div class="sentiment-bar-bg">
-                            <div class="sentiment-bar-fill" style="width: ${stock.avgSentiment}%"></div>
-                        </div>
+                    <div class="mt-auto pt-3 border-t border-slate-700/50">
+                        <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-2">추천 전문가</p>
+                        ${expertHtml}
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         function renderUpdateSummary() {
@@ -681,6 +814,10 @@
                     const bgClass = isMulti ? 'bg-slate-800/80 border-amber-500/50' : 'glass-panel';
 
                     const card = document.createElement('div');
+                    // Add ID for scroll target
+                    const stockId = `stock-card-${stock.stockName.replace(/\s+/g, '')}`;
+                    card.id = stockId;
+                    
                     card.className = `${bgClass} rounded-xl p-6 transition duration-300 card-hover flex flex-col h-full border border-slate-700/50 ${colSpanClass}`;
                     
                     // PER Tag Logic
