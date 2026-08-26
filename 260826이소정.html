@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이소정 학생 심리 분석 보고서</title>
+    
+    <!-- [카카오톡/SNS 공유 미리보기 설정 (Open Graph)] -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="수학의시대">
+    
+    <!-- 1. 미리보기 제목 -->
+    <meta property="og:title" content="이소정 학생 - 학습멘탈 심리검사결과지">
+    
+    <!-- 2. 미리보기 설명 -->
+    <meta property="og:description" content="캐릭터: 자유를 갈망하는 솔직한 개척자 (Free-spirited Trailblazer) | 5대 핵심 역량 분석 결과 확인하기">
+    
+    <!-- 3. 미리보기 이미지 -->
+    <meta property="og:image" content="https://mathtimes-lab.github.io/Psychology/image02.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="400">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+        }
+        .serif {
+            font-family: 'Noto Serif KR', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        @media print {
+            body { background-color: white; color: black; }
+            .no-print { display: none; }
+            .print-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body class="text-slate-300 antialiased selection:bg-amber-500 selection:text-white pb-20">
+
+    <!-- Cover Section -->
+    <header class="max-w-5xl mx-auto mt-6 md:mt-10 mb-10 md:mb-16 p-6 md:p-8 lg:p-16 bg-slate-800 rounded-3xl card-shadow border border-slate-700 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500 opacity-10 blur-3xl rounded-full pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <!-- Logo & Title Placement -->
+        <div class="absolute top-5 left-5 md:top-6 md:left-6 z-20 flex flex-col items-start">
+            <img src="수학의시대-신로고.jpg" 
+                 alt="수학의시대" 
+                 class="w-24 md:w-28 lg:w-36 object-contain mb-2 md:mb-3"
+                 onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            
+            <div id="logo-text" class="hidden text-amber-500 font-bold text-lg md:text-xl serif border-2 border-amber-500 px-2 md:px-3 py-1 mb-3">
+                수학의시대
+            </div>
+            
+            <div class="serif text-slate-400 text-[10px] md:text-xs lg:text-sm tracking-widest font-light border-l-2 border-amber-500 pl-2 md:pl-3">
+                수학의시대<br>
+                <span class="text-slate-200 font-medium mt-1 block">학습멘탈 심리검사결과지</span>
+            </div>
+        </div>
+
+        <div class="text-center relative z-10 pt-28 md:pt-24 lg:pt-16">
+            <p class="text-amber-500 tracking-[0.3em] text-xs md:text-sm font-bold uppercase mb-3 md:mb-4">Premium Insight Report</p>
+            <h1 class="serif text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2">이소정 <span class="text-xl md:text-2xl lg:text-3xl font-normal text-slate-400">학생</span></h1>
+            <p class="text-slate-400 text-base md:text-lg mb-6 md:mb-8">중학교 1학년 | 심리 & 학습 성향 분석</p>
+            
+            <div class="inline-block border-t border-b border-slate-600 py-4 md:py-6 px-2 md:px-4 lg:px-12 w-full md:w-auto">
+                <h2 class="serif text-xl md:text-2xl lg:text-3xl text-white font-light italic leading-relaxed">
+                    "주관이 뚜렷한 자유로운 영혼,<br>
+                    <span class="text-amber-400 font-normal">'자유를 갈망하는 솔직한 개척자 (Free-spirited Trailblazer)'</span>"
+                </h2>
+            </div>
+            
+            <p class="mt-6 md:mt-8 text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto break-keep">
+                소정 학생은 어른들의 논리가 틀렸을 때 당당히 지적할 줄 알고, 통제와 간섭을 극도로 싫어하는 <strong>매우 확고하고 독립적인 주관(자율성 4.4점)</strong>을 가진 아이입니다.<br class="hidden md:block">
+                남들과 비슷한 평범함을 거부하고 특별한 사람이 되기를 원하며, <strong>'지금과 다른 새로운 분야'</strong>를 갈망하는 진취적인 에너지를 품고 있습니다.<br class="hidden md:block">
+                비록 지루한 것을 참아내는 끈기는 다소 약하지만, 흥미를 느끼는 분야에는 폭발적으로 몰입하는 소정이만의 재능을 깨우기 위한 맞춤형 가이드입니다.
+            </p>
+        </div>
+    </header>
+
+    <!-- Chart & Summary Section -->
+    <section class="max-w-5xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16">
+        <!-- Radar Chart -->
+        <div class="bg-slate-800 p-4 md:p-6 rounded-2xl border border-slate-700 card-shadow flex flex-col justify-center items-center lg:col-span-1">
+            <h3 class="text-white font-bold mb-4 text-center text-sm md:text-base">5대 핵심 역량 밸런스</h3>
+            <div class="w-full h-56 md:h-64 relative">
+                <canvas id="myChart"></canvas>
+            </div>
+            <!-- 설명 문구 -->
+            <p class="text-[10px] md:text-xs text-center text-slate-500 mt-4">* 0점 ~ 5점 척도 기준 분석입니다.</p>
+        </div>
+
+        <!-- Key Summary -->
+        <div class="lg:col-span-2 bg-gradient-to-br from-slate-800 to-slate-900 p-6 md:p-8 rounded-2xl border border-slate-700 card-shadow flex flex-col justify-center">
+            <h3 class="serif text-xl md:text-2xl text-white mb-4 md:mb-6">분석 요약</h3>
+            <div class="space-y-3 md:space-y-4 text-sm md:text-base">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">최대 강점 (Strength)</span>
+                    <span class="text-amber-400 font-bold text-base md:text-lg">확고한 주관 (4.4) & 특별함에 대한 열망</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">주의 요인 (Weakness)</span>
+                    <span class="text-red-400 font-bold text-base md:text-lg">부족한 인내심 (2.0) & 쉬운 포기</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">핵심 성향 (Core)</span>
+                    <span class="text-blue-300 font-bold text-base md:text-lg">권위 거부형 & 흥미 위주의 극단적 몰입</span>
+                </div>
+            </div>
+            <p class="mt-4 md:mt-6 text-slate-300 italic text-sm md:text-base leading-relaxed break-keep">
+                "선생님/부모님이 틀렸을 때 바로 지적하고(원점수 5점), 간섭과 압박에 강하게 반발하는(원점수 5점) 극도로 솔직하고 당찬 아이입니다. 
+                평범함을 거부하며 특별해지고 싶은 인정 욕구가 강합니다. 그러나 오래 앉아있는 것을 너무 힘들어하고(원점수 5점), 일이 안 풀리면 금방 포기해 버리는(원점수 1점) 등 인내심이 부족한 것이 약점입니다. 
+                대신 '본인이 흥미를 느끼는 것(5점)'에는 무서울 정도로 몰입하는 극단적이고 개성 강한 성향을 보입니다."
+            </p>
+        </div>
+    </section>
+
+    <!-- Detail Cards Section -->
+    <main class="max-w-5xl mx-auto px-4 space-y-6 md:space-y-8">
+        
+        <!-- Row 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <!-- 1. 자기애 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-amber-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">01. 자기애 (Self-regard)</h3>
+                    <span class="bg-amber-500/20 text-amber-500 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">3.8점 / 톡톡 튀는 자부심</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"남들과 똑같은 건 싫어. 난 좀 특별하니까!"</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    자신의 능력을 긍정적으로 평가하며(4점), 남들과 비슷한 수준에 머무르는 것을 내심 싫어합니다(역문항 반영). 평범한 것보다 특별한 사람이 되고 싶다는 욕구가 강하고(4점), 누군가 자신의 진가를 인정해 줄 때 기분이 수직 상승합니다(5점). 남의 시선을 은근히 신경 쓰면서도 자신만의 개성을 표출하고 싶어 하는 건강한 자부심을 가졌습니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-amber-400 text-sm font-bold mb-2">💡 SOLUTION : '특별함'을 자극하는 칭찬</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">"남들 다 하는 건데 왜 넌 못해?"는 최악의 금기어입니다. "소정이가 푼 방식은 진짜 창의적이고 특별하다!"라며 아이의 유니크함을 콕 짚어 인정해 주세요.</p>
+                </div>
+            </div>
+
+            <!-- 2. 실천력 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-blue-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">02. 실천력·의지력 (Grit)</h3>
+                    <span class="bg-blue-500/20 text-blue-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">2.0점 / 흥미 한정 불도저</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"재미없는 걸 왜 참고해? 지루한 건 딱 질색이야."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    오래 앉아있는 것을 극도로 힘들어하고(원점수 5점), 일이 잘 안 풀리면 아주 쉽게 포기해 버립니다(원점수 1점). 계획을 세워도 끝까지 지키는 일이 드물고 마감 직전까지 미루는 성향이 큽니다. 인내심과 끈기는 매우 부족하지만, <strong>'본인이 흥미를 느끼는 공부(분야)'</strong>에서는 무서운 집중력으로 스스로 열심히 하는(5점) 극단적인 실천력을 보입니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-blue-400 text-sm font-bold mb-2">💡 SOLUTION : '마이크로(Micro)' 미션과 게임화</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">장기 목표는 소정이에게 너무 지루합니다. "딱 15분만 이거 끝내고 쉬자"처럼 목표를 아주 잘게 쪼개어 지루함을 느낄 새 없이 작은 성취를 반복하게 하세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <!-- 3. 욕심 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-purple-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">03. 욕심·동기부여 (Ambition)</h3>
+                    <span class="bg-purple-500/20 text-purple-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">3.4점 / 새로운 길을 향한 갈증</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"지금 공부 말고, 완전히 새로운 걸 배워보고 싶어."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    성공하고 싶다는 마음은 충만하지만(5점), 현재 뚜렷한 목표를 찾지 못해 의욕이 다소 정체되어 있습니다. 하지만 주목할 점은 압박이 사라졌을 때 <strong>"지금과 다른 종류의 분야를 배워 새로운 방향으로 진로를 변경하겠다"</strong>고 답한 부분입니다. 현재의 틀에 박힌 공부가 답답할 뿐, 마음속에는 자기만의 새로운 무대를 개척하고 싶은 진취적인 에너지가 꿈틀대고 있습니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-purple-400 text-sm font-bold mb-2">💡 SOLUTION : '다양한 경험'이 곧 동기부여</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">책상머리 공부만 강요하면 흥미를 완전히 잃습니다. 문과적 기질과 호기심을 자극할 수 있는 독특한 직업군 체험, 동아리 활동 등 교과 외의 다채로운 경험을 열어주세요.</p>
+                </div>
+            </div>
+
+            <!-- 4. 멘탈 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-emerald-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">04. 멘탈 강도 (Resilience)</h3>
+                    <span class="bg-emerald-500/20 text-emerald-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">3.2점 / 쿨함과 예민함 사이</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"남들 시선이나 작은 실패엔 안 흔들려. 근데 뜻대로 안 되면 화가 나."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    스트레스는 비교적 빨리 가라앉히고(4점), 작은 실패에도 의외로 흔들리지 않는 쿨한 구석(원점수 1점)이 있습니다. 지적을 받아도 심하게 주눅 들지는 않지만(원점수 2점), <strong>내 뜻대로 일이 안 풀릴 때 감정을 조절하는 것(2점)</strong>을 힘들어합니다. 실패를 극복하고 다시 일어서는 회복력이 다소 부족하여 중간에 놔버리는 성향이 혼재되어 있습니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-emerald-400 text-sm font-bold mb-2">💡 SOLUTION : 감정의 찌꺼기 비워주기</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">일이 안 풀려 짜증을 낼 때 "끈기가 없다"고 혼내지 마세요. "내 맘대로 안 돼서 화났구나"라고 감정을 먼저 읽어주어야 흥분을 가라앉히고 다시 시작할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 (Full Width) -->
+        <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-cyan-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-3 md:mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-white">05. 자율성/주도력 (Autonomy)</h3>
+                        <span class="bg-cyan-500/20 text-cyan-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-auto md:ml-4">4.4점 / 억압 불가! 솔직한 직진러</span>
+                    </div>
+                    <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"어른들이 틀리면 말해야죠. 강압적으로 시키면 절대 안 해요!"</p>
+                    <div class="text-slate-400 text-sm leading-relaxed break-keep">
+                        소정이의 가장 두드러지는 정체성입니다. 선생님이나 부모님의 말이 틀리면 그 자리에서 바로 말하고(원점수 5점), 딱딱하고 권위적인 태도에는 반발심이 폭발하며(원점수 5점), 간섭을 받으면 하던 것도 멈춰버립니다(원점수 5점). 통제와 억압을 절대 용납하지 않는 극강의 독립성과 솔직함을 지녔으며, 스스로 납득해야만 움직이는 자유로운 영혼입니다.
+                    </div>
+                </div>
+                <div class="md:w-1/3 bg-slate-900/50 p-4 md:p-6 rounded-xl border border-slate-700 flex flex-col justify-center">
+                    <h4 class="text-cyan-400 text-sm font-bold mb-2 md:mb-3">💡 SOLUTION : 수직적 지시에서 '수평적 타협'으로</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">명령어는 소정이의 반발심만 키웁니다. "이거 해!"가 아니라 "엄마 생각은 이런데 소정이 생각은 어때? 우리 어떻게 조율할까?"라며 동등한 파트너로 대우해야 합니다.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Guide Section -->
+    <section class="max-w-5xl mx-auto px-4 mt-12 md:mt-16 print-break">
+        <div class="bg-white text-slate-900 rounded-3xl p-6 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-400 to-amber-600"></div>
+            
+            <h2 class="serif text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center text-slate-800">부모님을 위한 가이드 & 총평</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-6 md:mb-10">
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">🗣️</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">솔직함을 '당돌함'으로 존중</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">어른에게 반박하는 모습을 '버릇없다'고 누르지 마세요. 틀린 것을 틀렸다고 말할 수 있는 용기와 확고한 주관은 소정이가 세상을 개척할 훌륭한 리더십의 씨앗입니다.</p>
+                </div>
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">🎮</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">'흥미'가 최고의 연료</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">인내심이 약해 억지로 시키는 건 효율이 0에 가깝습니다. 아이가 조금이라도 관심을 가지는 문과적 이슈나 새로운 활동을 찾아 학습과 자연스럽게 연결해 주는 것이 관건입니다.</p>
+                </div>
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">🤝</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">잔소리 금지, 선택권 부여</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">간섭을 받으면 하던 것도 던져버리는 성향입니다. "숙제 다 했어?"라는 감시보다는, "오늘 저녁 시간 관리는 소정이가 알아서 해 봐"라고 전적으로 믿고 맡겼을 때 오히려 책임감이 생깁니다.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 md:mt-8 bg-slate-100 p-6 md:p-8 rounded-xl border-l-4 border-slate-800">
+                <h3 class="font-bold text-slate-800 mb-2 md:mb-4 text-lg md:text-xl">To. 소정</h3>
+                <p class="text-slate-700 italic leading-loose text-base md:text-lg break-keep">
+                    "소정아, 넌 누구보다 당당하고 솔직한 너만의 색깔을 가진 아주 특별하고 매력적인 아이란다.
+                    어른들이 틀렸다고 생각할 때 눈치 보지 않고 네 의견을 당당하게 말할 줄 아는 용기는, 앞으로 네가 불합리한 세상에 맞서 나갈 때 가장 훌륭한 무기가 될 거야.
+                    가끔은 앉아서 공부하는 게 너무 지루하고, 일이 맘대로 안 풀리면 금방 엎어버리고 싶기도 하지? 
+                    하지만 네가 정말 좋아하는 무언가를 발견했을 때 보여주는 그 무서운 몰입력은 정말 대단해.
+                    새로운 분야를 개척하고 싶다는 네 마음속 불꽃이 활짝 피어날 수 있도록, 조급해하지 말고 네가 진짜 가슴 뛰게 좋아하는 일이 무엇인지 천천히 찾아보렴. 
+                    너의 그 솔직하고 멋진 당돌함을 항상 열렬히 응원할게!"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-12 md:mt-20 text-slate-600 text-xs md:text-sm pb-8">
+        <p>© 2026 Education Psychology Analysis. All rights reserved.</p>
+        <p>This report is designed for student Lee So-jeong.</p>
+    </footer>
+
+    <script>
+        // Chart configuration - Lee So-jeong's Data
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['자기애/자신감', '실천력', '욕심/야망', '멘탈/회복력', '자율성/주도력'],
+                datasets: [{
+                    label: '역량 점수',
+                    data: [3.8, 2.0, 3.4, 3.2, 4.4], 
+                    backgroundColor: 'rgba(251, 191, 36, 0.2)', // Amber-400 with opacity
+                    borderColor: 'rgba(251, 191, 36, 1)', // Amber-400
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+                    pointBorderColor: 'rgba(251, 191, 36, 1)',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 5,
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: {
+                            color: '#94a3b8', // Slate-400
+                            font: { size: 12, family: "'Noto Sans KR', sans-serif" }
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: 'rgba(255, 255, 255, 0.5)',
+                            stepSize: 1,
+                            showLabelBackdrop: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
