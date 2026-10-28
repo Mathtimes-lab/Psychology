@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양준 학생 심리 분석 보고서</title>
+    
+    <!-- [카카오톡/SNS 공유 미리보기 설정 (Open Graph)] -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="수학의시대">
+    <meta property="og:title" content="양준 학생 - 학습멘탈 심리검사결과지">
+    <meta property="og:description" content="캐릭터: 흔들림 없는 강철 멘탈을 지닌 독립적 승부사 | 5대 핵심 역량 분석 결과 확인하기">
+    <meta property="og:image" content="https://mathtimes-lab.github.io/Psychology/image02.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="400">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+        }
+        .serif {
+            font-family: 'Noto Serif KR', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        @media print {
+            body { background-color: white; color: black; }
+            .no-print { display: none; }
+            .print-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body class="text-slate-300 antialiased selection:bg-rose-500 selection:text-white pb-20">
+
+    <!-- Cover Section -->
+    <header class="max-w-5xl mx-auto mt-6 md:mt-10 mb-10 md:mb-16 p-6 md:p-8 lg:p-16 bg-slate-800 rounded-3xl card-shadow border border-slate-700 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-rose-500 opacity-10 blur-3xl rounded-full pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <!-- Logo & Title Placement -->
+        <div class="absolute top-5 left-5 md:top-6 md:left-6 z-20 flex flex-col items-start">
+            <img src="수학의시대-신로고.jpg" 
+                 alt="수학의시대" 
+                 class="w-24 md:w-28 lg:w-36 object-contain mb-2 md:mb-3"
+                 onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+            
+            <div id="logo-text" class="hidden text-rose-500 font-bold text-lg md:text-xl serif border-2 border-rose-500 px-2 md:px-3 py-1 mb-3">
+                수학의시대
+            </div>
+            
+            <div class="serif text-slate-400 text-[10px] md:text-xs lg:text-sm tracking-widest font-light border-l-2 border-rose-500 pl-2 md:pl-3">
+                수학의시대<br>
+                <span class="text-slate-200 font-medium mt-1 block">학습멘탈 심리검사결과지</span>
+            </div>
+        </div>
+
+        <div class="text-center relative z-10 pt-28 md:pt-24 lg:pt-16">
+            <p class="text-rose-500 tracking-[0.3em] text-xs md:text-sm font-bold uppercase mb-3 md:mb-4">Premium Insight Report</p>
+            <h1 class="serif text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2">양준 <span class="text-xl md:text-2xl lg:text-3xl font-normal text-slate-400">학생</span></h1>
+            <p class="text-slate-400 text-base md:text-lg mb-6 md:mb-8">중학교 3학년 | 심리 & 학습 성향 분석</p>
+            
+            <div class="inline-block border-t border-b border-slate-600 py-4 md:py-6 px-2 md:px-4 lg:px-12 w-full md:w-auto">
+                <h2 class="serif text-xl md:text-2xl lg:text-3xl text-white font-light italic leading-relaxed">
+                    "간섭을 거부하고 스스로 길을 개척하는,<br>
+                    <span class="text-rose-400 font-normal">'흔들림 없는 독립적 승부사 (Independent Competitor)'</span>"
+                </h2>
+            </div>
+            
+            <p class="mt-6 md:mt-8 text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto break-keep">
+                준이 학생은 '운동선수'라는 확고한 꿈을 품고 있으며, 실패나 스트레스에도 절대 꺾이지 않는 놀라운 회복력(4.8점)을 지닌 진정한 승부사입니다. 억압적인 학업 스트레스가 사라져도 '대학 진학을 목표로 묵묵히 공부하겠다'고 답할 만큼 성숙한 내적 동기를 갖추고 있습니다.<br class="hidden md:block">
+                하지만, 누군가 강압적으로 지시하거나 자신의 방식에 간섭하면 강한 반발심을 보이며 튕겨나가는 뚜렷하고 확고한 주관을 지녔습니다. 억지로 시키면 절대 움직이지 않지만, 스스로 목표를 납득하면 무서운 집중력을 발휘하는 준이에게는 '통제'가 아닌 '존중과 선택권'이 성장의 핵심 열쇠입니다.
+            </p>
+        </div>
+    </header>
+
+    <!-- Chart & Summary Section -->
+    <section class="max-w-5xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16">
+        <!-- Radar Chart -->
+        <div class="bg-slate-800 p-4 md:p-6 rounded-2xl border border-slate-700 card-shadow flex flex-col justify-center items-center lg:col-span-1">
+            <h3 class="text-white font-bold mb-4 text-center text-sm md:text-base">5대 핵심 역량 밸런스</h3>
+            <div class="w-full h-56 md:h-64 relative">
+                <canvas id="myChart"></canvas>
+            </div>
+            <p class="text-[10px] md:text-xs text-center text-slate-500 mt-4">* 0점 ~ 5점 척도 기준 분석입니다.</p>
+        </div>
+
+        <!-- Key Summary -->
+        <div class="lg:col-span-2 bg-gradient-to-br from-slate-800 to-slate-900 p-6 md:p-8 rounded-2xl border border-slate-700 card-shadow flex flex-col justify-center">
+            <h3 class="serif text-xl md:text-2xl text-white mb-4 md:mb-6">분석 요약</h3>
+            <div class="space-y-3 md:space-y-4 text-sm md:text-base">
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">최대 강점 (Strength)</span>
+                    <span class="text-emerald-400 font-bold text-base md:text-lg">어떤 위기에도 무너지지 않는 초강력 강철 멘탈 (4.8)</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">숨겨진 무기 (Secret Weapon)</span>
+                    <span class="text-purple-400 font-bold text-base md:text-lg">압박 없이도 유지되는 뚜렷한 대학 진학 목표</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-xs md:text-sm">주의 요인 (Weakness)</span>
+                    <span class="text-cyan-400 font-bold text-base md:text-lg">간섭과 통제에 대한 강렬한 거부감, 호불호 강한 실천력</span>
+                </div>
+            </div>
+            <p class="mt-4 md:mt-6 text-slate-300 italic text-sm md:text-base leading-relaxed break-keep">
+                "준이는 실패를 두려워하지 않고 다시 일어서는 단단한 멘탈(5점)을 가졌으며, 목표를 성취하려는 강한 욕심(5점)도 갖춘 훌륭한 재목입니다. 그러나 누군가 강하게 시키면 오히려 하기 싫어하고(5점), 간섭받으면 의욕을 잃는(4점) 뚜렷한 고집이 있습니다. 억지로 책상에 앉히기보다, 스스로 납득할 수 있는 '명분'을 제공하는 것이 가장 중요합니다."
+            </p>
+        </div>
+    </section>
+
+    <!-- Detail Cards Section -->
+    <main class="max-w-5xl mx-auto px-4 space-y-6 md:space-y-8">
+        <!-- Row 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <!-- 1. 자기애 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-rose-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">01. 자기애 (Self-regard)</h3>
+                    <span class="bg-rose-500/20 text-rose-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">3.6점 / 타인의 인정을 즐기는 당당함</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"나는 내 장점을 잘 알아. 남들이 나를 인정해주면 기분이 훨씬 좋아."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    자신이 무엇을 잘하는지 비교적 명확히 알고 있으며(5점), 타인의 평가나 시선을 꽤 중요하게 생각합니다(5점). 남들이 자신을 인정하고 칭찬해 줄 때 만족감이 폭발적으로 상승하는(5점) 자기 확신과 자부심이 공존하는 건강한 자아를 지녔습니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-rose-400 text-sm font-bold mb-2">💡 SOLUTION : 가치를 높여주는 쿨한 인정</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">잔소리보다는 "네가 한다면 하는 녀석이지"처럼 존재 자체와 능력을 쿨하게 인정해 줄 때, 남들의 시선을 의식하는 준이는 기대에 부응하기 위해 더욱 책임감 있게 행동합니다.</p>
+                </div>
+            </div>
+
+            <!-- 2. 실천력 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-blue-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">02. 실천력·의지력 (Grit)</h3>
+                    <span class="bg-blue-500/20 text-blue-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">3.1점 / 호불호가 극명한 선택적 몰입</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"계획은 잘 세우고 숙제가 남으면 찜찜해. 하지만 너무 하기 싫은 일은 억지로 못 하겠어."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    계획을 세우면 웬만하면 끝까지 지키려 하고(5점), 숙제가 남으면 마음이 불편해하는(5점) 기본 책임감은 뛰어납니다. 하지만 오래 앉아있는 것을 힘들어하며(1점), 정말 하기 싫은 일은 죽어도 억지로 시작하지 못하는(2점) 극단적인 호불호 성향을 보입니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-blue-400 text-sm font-bold mb-2">💡 SOLUTION : '왜' 해야 하는지 명분 찾아주기</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">하기 싫은 공부를 억지로 강요하면 오히려 역효과가 납니다. "훌륭한 운동선수가 되어 좋은 대학에 가려면 이 정도 기초는 필요하다"는 식의 명분을 통해 본인 스스로 필요성을 느끼게 해야 합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <!-- 3. 욕심 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-purple-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">03. 욕심·동기부여 (Ambition)</h3>
+                    <span class="bg-purple-500/20 text-purple-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">4.2점 / 뚜렷한 목표가 켜는 강력한 엔진</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"원하는 걸 얻기 위해서는 노력할 가치가 있어. 하지만 목표가 없으면 의욕이 안 생겨."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    이루고 싶은 목표가 마음속에 정해져 있으며(5점), 원하는 것을 얻기 위한 노력의 가치를 굳게 믿습니다(5점). 하지만 목표가 없는 상태에서는 의욕이 완전히 바닥을 치는(1점) 성향이므로, 뚜렷한 방향성이 준이의 학업 엔진을 켜는 유일한 열쇠입니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-purple-400 text-sm font-bold mb-2">💡 SOLUTION : 장기적 꿈과 단기적 미션의 연결</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">운동선수라는 뚜렷한 장기 목표를 존중해 주며, 그 목표를 달성하기 위해 이번 학기, 이번 달에 당장 해내야 할 작은 성취 목표들을 함께 세워 의욕의 불씨를 지펴주세요.</p>
+                </div>
+            </div>
+
+            <!-- 4. 멘탈 -->
+            <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-emerald-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+                <div class="flex justify-between items-start mb-3 md:mb-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">04. 멘탈 강도 (Resilience)</h3>
+                    <span class="bg-emerald-500/20 text-emerald-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-2">4.8점 / 실패를 두려워하지 않는 진정한 승부사</span>
+                </div>
+                <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"실패해도 다시 하면 돼. 스트레스받아도 금방 훌훌 털어낼 수 있어."</p>
+                <div class="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed break-keep">
+                    실패해도 다시 시작할 수 있다는 마음(5점)이 확고하며, 작은 실패나 스트레스에도 전혀 굴하지 않고 금방 평정심을 되찾습니다(5점). 예상대로 안 되어도 훌륭하게 감정을 조절해 내는, 스포츠와 인생에서 가장 강력한 무기인 완벽한 강철 멘탈을 지녔습니다.
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <h4 class="text-emerald-400 text-sm font-bold mb-2">💡 SOLUTION : 무한한 신뢰로 멘탈 강점 지지하기</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">준이의 이 놀라운 회복력은 어른들도 갖기 힘든 최고의 장점입니다. 실패했을 때 "너라면 훌훌 털고 금방 일어날 줄 알았어"라며 그 단단한 멘탈 자체를 아낌없이 칭찬해 주세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 (Full Width) -->
+        <div class="bg-slate-800 rounded-2xl p-6 md:p-8 border-t-4 border-cyan-500 shadow-lg hover:transform hover:-translate-y-1 transition duration-300">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                    <div class="flex justify-between items-start mb-3 md:mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-white">05. 자율성/주도력 (Autonomy)</h3>
+                        <span class="bg-cyan-500/20 text-cyan-400 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap ml-auto md:ml-4">4.5점 / 간섭을 거부하는 확고한 독립성</span>
+                    </div>
+                    <p class="serif text-base md:text-lg text-slate-200 italic mb-3 md:mb-4">"내 방식대로 할 테니까 제발 간섭하거나 강압적으로 시키지 마세요."</p>
+                    <div class="text-slate-400 text-sm leading-relaxed break-keep">
+                        남이 시키는 방식보다 자신이 정한 방식으로 할 때 훨씬 편안함을 느끼며(5점), 누군가 강하게 압박(5점)하거나 간섭하면(4점) 하려던 마음도 흔적 없이 사라집니다. 심지어 선생님이나 부모님의 말씀이 틀렸다고 느끼면 당당히 반발할 수 있는(역문항 기준) 매우 확고하고 독립적인 주관을 가졌습니다.
+                    </div>
+                </div>
+                <div class="md:w-1/3 bg-slate-900/50 p-4 md:p-6 rounded-xl border border-slate-700 flex flex-col justify-center">
+                    <h4 class="text-cyan-400 text-sm font-bold mb-2 md:mb-3">💡 SOLUTION : '통제'가 아닌 '자율권' 부여하기</h4>
+                    <p class="text-slate-300 text-sm mb-2 break-keep">준이를 어설프게 통제하려 들면 강하게 튕겨 나갑니다. "공부해!"라는 명령보다는 "언제까지 마칠래?"라며 결정권을 아이에게 넘겨주어 스스로 책임지게 만드는 것이 핵심입니다.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Guide Section -->
+    <section class="max-w-5xl mx-auto px-4 mt-12 md:mt-16 print-break">
+        <div class="bg-white text-slate-900 rounded-3xl p-6 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-rose-400 to-rose-600"></div>
+            
+            <h2 class="serif text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center text-slate-800">부모님을 위한 가이드 & 총평</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-6 md:mb-10">
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">🤝</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">명령 대신 '협상'하기</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">강압적인 지시는 독이 됩니다. 아이가 스스로 선택하고 결정할 수 있도록 자율권을 주고, 그에 따른 책임을 지도록 어른 대 어른으로 협상하는 자세가 필요합니다.</p>
+                </div>
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">🎯</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">꿈과 연결된 명분 주기</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">하기 싫은 공부를 할 때는 끈기가 부족해집니다. "운동선수로서 멋진 미래를 그리기 위해 최소한의 학업이 왜 필요한지" 아이가 스스로 납득할 수 있는 명분을 찾아주세요.</p>
+                </div>
+                <div class="text-center p-4 bg-slate-50 rounded-xl">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl">🛡️</div>
+                    <h3 class="font-bold text-base md:text-lg mb-2 text-slate-800">강철 멘탈 믿어주기</h3>
+                    <p class="text-xs md:text-sm text-slate-600 break-keep">스트레스와 실패를 극복하는 엄청난 멘탈을 지녔습니다. 아이가 작은 위기를 겪을 때 불안해하시기보다, "너는 알아서 잘 이겨낼 거야"라는 강력한 신뢰를 보여주세요.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 md:mt-8 bg-slate-100 p-6 md:p-8 rounded-xl border-l-4 border-slate-800">
+                <h3 class="font-bold text-slate-800 mb-2 md:mb-4 text-lg md:text-xl">To. 양준</h3>
+                <p class="text-slate-700 italic leading-loose text-base md:text-lg break-keep">
+                    "준아, 실패나 위기 앞에서도 꺾이지 않고 훌훌 털어내는 너의 그 엄청난 강철 멘탈은, 앞으로 네가 멋진 운동선수로 성장하는 데 있어 그 어떤 재능보다 훌륭한 무기가 될 거야. 압박이 없어도 네 미래를 위해 대학에 가겠다고 스스로 다짐하는 모습도 정말 어른스럽고 대견하단다.<br><br>
+                    다만, 내 주관이 뚜렷한 건 정말 멋진 일이지만, 간혹 정말 하기 싫고 지루한 일도 내 꿈을 위해 버텨내야만 하는 순간들이 반드시 온단다. 누가 시켜서 억지로 하는 것이 아니라, '내 멋진 미래를 위해 내가 스스로 선택한 일'이라고 생각을 조금만 바꿔보렴. 너의 그 흔들림 없는 강한 의지라면 어떤 목표든 반드시 이뤄낼 수 있을 거야. 널 항상 응원해!"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-12 md:mt-20 text-slate-600 text-xs md:text-sm pb-8">
+        <p>© 2026 Education Psychology Analysis. All rights reserved.</p>
+        <p>This report is designed for student Yang Jun.</p>
+    </footer>
+
+    <script>
+        // Chart configuration - Yang Jun's Data
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['자기애/자신감', '실천력', '욕심/야망', '멘탈/회복력', '자율성/주도력'],
+                datasets: [{
+                    label: '역량 점수',
+                    data: [3.6, 3.1, 4.2, 4.8, 4.5],
+                    backgroundColor: 'rgba(244, 63, 94, 0.2)', // Rose-500 with opacity
+                    borderColor: 'rgba(244, 63, 94, 1)', // Rose-500
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+                    pointBorderColor: 'rgba(244, 63, 94, 1)',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 5,
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: {
+                            color: '#94a3b8', // Slate-400
+                            font: { size: 12, family: "'Noto Sans KR', sans-serif" }
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: 'rgba(255, 255, 255, 0.5)',
+                            stepSize: 1,
+                            showLabelBackdrop: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
